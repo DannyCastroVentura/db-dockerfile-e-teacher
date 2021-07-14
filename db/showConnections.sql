@@ -1,0 +1,1 @@
+show max_connections;
