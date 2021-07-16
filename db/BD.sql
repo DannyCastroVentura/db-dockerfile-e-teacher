@@ -222,7 +222,7 @@ insert into Orientacoes (email, nomeCurso, tema, relatorio, link, titulo, alunoE
 insert into trabalhosAlunos (idTrabalho, alunoEmail) VALUES ('idTrab1', 'rodrigoGomes@gmail.com');
 insert into trabalhosAlunos (idTrabalho, alunoEmail) VALUES ('idTrab1', 'goncaloDinis@gmail.com');
 
-insert into admin (email, password, nome) VALUES ('teste@teste', '$2b$12$tCHOcYWuo418UIwias1l5O3q987mUuGCDBIY8vYRQJ95JfcDODdKK', 'teste');
+insert into admin (email, password, nome) VALUES ('teste@teste', '$2b$12$HUCgGTg8nxyAwn3oC9/9B.dlMUz.N6K5fnz8Z3BnzREpwes91iwbC', 'teste');
 
 insert into logsadmin (tipoDeAlteracao, tabela, idRegisto, estadoFinal, email) VALUES ('1', '2', '3', '4', 'teste@teste');
 
