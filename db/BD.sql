@@ -170,7 +170,7 @@ insert into areas (nome, cor) VALUES ('Web development', '#67f20f');
 insert into areas (nome, cor) VALUES ('Distributed systems', '#bfd9d7');
 
 insert into professores (email, password, nome, estado, idArea) VALUES ('dannyventura@gmail.com', '123', 'Daniel Castro Ventura', true, 1);
-insert into professores (email, password, nome, estado, idArea, fotoPerfil, fotoFundo, resumo, exp) VALUES ('exemploDeProfessor@gmail.com', '321', 'Exemplo', true, 2, 'https://i.pinimg.com/originals/4e/45/88/4e458893b1fdc033508016e09fa5553c.jpg', 'https://wakke.co/wp-content/uploads/2019/01/267114-o-que-e-educacao-40-e-como-ela-vai-mudar-o-modo-como-se-aprende-1.jpg', 'Professor de bases de dados.Faço e fiz parte de trabalhos de pesquisa e tenho alguns trabalhos de alunos realizados!Navega no meu perfil para saberes mais!', 2014);
+insert into professores (email, password, nome, estado, idArea, fotoPerfil, fotoFundo, resumo, exp) VALUES ('exemploDeProfessor@gmail.com', '321', 'Exemplo', true, 2, 'https://i.pinimg.com/originals/4e/45/88/4e458893b1fdc033508016e09fa5553c.jpg', 'https://wakke.co/wp-content/uploads/2019/01/267114-o-que-e-educacao-40-e-como-ela-vai-mudar-o-modo-como-se-aprende-1.jpg', 'Professor de bases de dados. Faço e fiz parte de trabalhos de pesquisa e tenho alguns trabalhos de alunos realizados! Navega no meu perfil para saberes mais!', 2014);
 
 insert into alunos (email, password, nome, estado, numeroDeAluno) VALUES ('rodrigoGomes@gmail.com', '432', 'Rodrigo Gomes', true, 30002639);
 insert into alunos (email, password, nome, estado, numeroDeAluno) VALUES ('goncaloDinis@gmail.com', '434', 'Gonçalo Dinis', true, 30002640);
