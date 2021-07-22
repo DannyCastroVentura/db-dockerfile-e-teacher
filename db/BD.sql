@@ -36,7 +36,6 @@ create table if not exists professores(
     resumo varchar(1000),
     exp integer DEFAULT 0,
     idArea integer,
-    orcidId varchar(24),
     FOREIGN key (idArea) REFERENCES areas (idArea) ON UPDATE CASCADE
 );
 
@@ -171,7 +170,7 @@ insert into areas (nome, cor) VALUES ('Web development', '#67f20f');
 insert into areas (nome, cor) VALUES ('Distributed systems', '#bfd9d7');
 
 insert into professores (email, password, nome, estado, idArea) VALUES ('dannyventura@gmail.com', '123', 'Daniel Castro Ventura', true, 1);
-insert into professores (email, password, nome, estado, idArea) VALUES ('exemploDeProfessor@gmail.com', '321', 'Exemplo', true, 1);
+insert into professores (email, password, nome, estado, idArea, fotoPerfil, fotoFundo, resumo, exp) VALUES ('exemploDeProfessor@gmail.com', '321', 'Exemplo', true, 3, 'https://i.pinimg.com/originals/4e/45/88/4e458893b1fdc033508016e09fa5553c.jpg', 'https://wakke.co/wp-content/uploads/2019/01/267114-o-que-e-educacao-40-e-como-ela-vai-mudar-o-modo-como-se-aprende-1.jpg', 'Professor de bases de dados.\nFaço e fiz parte de trabalhos de pesquisa e tenho alguns trabalhos de alunos realizados!\nNavega no meu perfil para saberes mais!', 2014);
 
 insert into alunos (email, password, nome, estado, numeroDeAluno) VALUES ('rodrigoGomes@gmail.com', '432', 'Rodrigo Gomes', true, 30002639);
 insert into alunos (email, password, nome, estado, numeroDeAluno) VALUES ('goncaloDinis@gmail.com', '434', 'Gonçalo Dinis', true, 30002640);
@@ -206,21 +205,26 @@ insert into professoresAlunos (professorEmail, alunoEmail) VALUES ('exemploDePro
 
 insert into trabalhos (idtrabalho, nome, professorEmail, ano, resumo) values ('idTrab1', 'Android', 'dannyventura@gmail.com', 2021, 'Resumo do android');
 
-insert into trabalhos (idtrabalho, nome, professorEmail, ano, resumo) values ('idTrab2', 'Cloud management', 'exemploDeProfessor@gmail.com', 2018, 'Resumo de cloud management');
-insert into trabalhos (idtrabalho, nome, professorEmail, ano, resumo) values ('idTrab3', 'Inteligencia artificial', 'exemploDeProfessor@gmail.com', 2021, 'Robô que estaciona carros sozinho! Vamos tirar o trabalho a quem já não o tem!');
+insert into trabalhos (idtrabalho, nome, professorEmail, ano, resumo) VALUES ('idTrab2', 'Cloud management', 'exemploDeProfessor@gmail.com', 2018, 'Resumo de cloud management');
+insert into trabalhos (idtrabalho, nome, professorEmail, ano, resumo) VALUES ('idTrab3', 'Inteligencia artificial', 'exemploDeProfessor@gmail.com', 2021, 'Robô que estaciona carros sozinho! Vamos tirar o trabalho a quem já não o tem!');
 
-insert into ProjetosInvestigacao (email, titulo, sigla, investigadorPrincipal, financiador, dataInicio) values ('dannyventura@gmail.com', 'exemplo de pj', 'EPJ', 'exemploDeInvestigadorPrincipal', 'exemploDeFinanciador', 2001);
+insert into trabalhosAlunos (idTrabalho, alunoEmail) VALUES ('idTrab2', 'goncaloDinis@gmail.com');
+insert into trabalhosAlunos (idTrabalho, alunoEmail) VALUES ('idTrab3', 'estiloso@gmail.com');
 
-insert into ProjetosInvestigacao (email, titulo, sigla, investigadorPrincipal, financiador, dataInicio) values ('exemploDeProfessor@gmail.com', 'exemplo de projeto de pesquisa', 'EPJ', 'exemploDeInvestigadorPrincipal', 'exemploDeFinanciador', 2001);
-insert into ProjetosInvestigacao (email, titulo, sigla, investigadorPrincipal, financiador, dataInicio, dataFim) values ('exemploDeProfessor@gmail.com', 'Telecomunicações Aérias', 'TA', 'TAP', 'TAP', 2016, 2020);
+insert into ProjetosInvestigacao (email, titulo, sigla, investigadorPrincipal, financiador, dataInicio) VALUES ('dannyventura@gmail.com', 'exemplo de pj', 'EPJ', 'exemploDeInvestigadorPrincipal', 'exemploDeFinanciador', 2001);
 
-insert into Orientacoes (email, nomeCurso, tema, relatorio, link, titulo, alunoEmail, dataInicio, dataFim, idInstituicao)  values ('dannyventura@gmail.com', 'Criador de conteúdos Digitais', 'Instagram', 'relatorio', 'link', true, 'rodrigoGomes@gmail.com', 1999, 2004, 2 );
+insert into ProjetosInvestigacao (email, titulo, sigla, investigadorPrincipal, financiador, dataInicio) VALUES ('exemploDeProfessor@gmail.com', 'exemplo de projeto de pesquisa', 'EPJ', 'exemploDeInvestigadorPrincipal', 'exemploDeFinanciador', 2001);
+insert into ProjetosInvestigacao (email, titulo, sigla, investigadorPrincipal, financiador, dataInicio, dataFim) VALUES ('exemploDeProfessor@gmail.com', 'Telecomunicações Aérias', 'TA', 'TAP', 'TAP', 2016, 2020);
 
-insert into Orientacoes (email, nomeCurso, tema, relatorio, link, titulo, alunoEmail, dataInicio, dataFim, idInstituicao)  values ('exemploDeProfessor@gmail.com', 'Criador de conteúdos Digitais', 'Instagram', 'relatorio', 'link', true, 'estiloso@gmail.com', 1999, 2004, 2 );
-insert into Orientacoes (email, nomeCurso, tema, relatorio, link, titulo, alunoEmail, dataInicio, idInstituicao)  values ('exemploDeProfessor@gmail.com', 'Web developement', 'E-Teacher', 'relatorio', 'link', false, 'goncaloDinis@gmail.com', 2005, 2 );
+insert into Orientacoes (email, nomeCurso, tema, relatorio, link, titulo, alunoEmail, dataInicio, dataFim, idInstituicao)  VALUES ('dannyventura@gmail.com', 'Criador de conteúdos Digitais', 'Instagram', 'relatorio', 'link', true, 'rodrigoGomes@gmail.com', 1999, 2004, 2 );
+
+insert into Orientacoes (email, nomeCurso, tema, relatorio, link, titulo, alunoEmail, dataInicio, dataFim, idInstituicao)  VALUES ('exemploDeProfessor@gmail.com', 'Criador de conteúdos Digitais', 'Instagram', 'relatorio', 'link', true, 'estiloso@gmail.com', 1999, 2004, 2 );
+insert into Orientacoes (email, nomeCurso, tema, relatorio, link, titulo, alunoEmail, dataInicio, idInstituicao)  VALUES ('exemploDeProfessor@gmail.com', 'Web developement', 'E-Teacher', 'relatorio', 'link', false, 'goncaloDinis@gmail.com', 2005, 2 );
 
 insert into trabalhosAlunos (idTrabalho, alunoEmail) VALUES ('idTrab1', 'rodrigoGomes@gmail.com');
 insert into trabalhosAlunos (idTrabalho, alunoEmail) VALUES ('idTrab1', 'goncaloDinis@gmail.com');
+
+insert into recursosDigitais (descricao, url, email) VALUES ('Orcid', 'https://orcid.org/0000-0002-6424-0252', 'exemploDeProfessor@gmail.com');
 
 insert into admin (email, password, nome) VALUES ('teste@teste', '$2b$12$HUCgGTg8nxyAwn3oC9/9B.dlMUz.N6K5fnz8Z3BnzREpwes91iwbC', 'teste');
 
